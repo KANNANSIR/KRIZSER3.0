@@ -18,13 +18,13 @@ let handler  = async (m, { itsu, usedPrefix: _p }) => {
 let fetch = require('node-fetch')
 let tag = `@${m.sender.split('@')[0]} 🐦`
  m, { contextInfo: { mentionedJid: itsu.parseMention(tag) }}
- let ow = `@${'6283820073017'.split('@')[0]}`
+ let ow = `@${'919633687665'.split('@')[0]}`
  m, { contextInfo: { mentionedJid: itsu.parseMention(tag) }}
- let pat1 = `@${'62813828362494'.split('@')[0]}`
+ let pat1 = `@${'919633687665'.split('@')[0]}`
  m, { contextInfo: { mentionedJid: itsu.parseMention(tag) }}
- let pat2 = `@${'6283801499848'.split('@')[0]}`
+ let pat2 = `@${'919633687665'.split('@')[0]}`
  m, { contextInfo: { mentionedJid: itsu.parseMention(tag) }}
- let pat3 = `@${'31687221333'.split('@')[0]}`
+ let pat3 = `@${'919633687665'.split('@')[0]}`
  m, { contextInfo: { mentionedJid: itsu.parseMention(tag) }}
 let uwu = global.thumb
 let jam = new Date
@@ -248,7 +248,7 @@ const buttons = [
 {buttonId: `/owner`, buttonText: {displayText: 'owner'}, type: 1}
 ]
 const buttonsMessage = {
-    contentText: `Ｈｉ ｕｓｅｒ\nᵢₘ  ${itsu.user.name} \n\n\n- Bot group: J3j8XFLPnOR0RI937C8Biu\n\n- Github : https://github.com/Rlxfly\n\n`,
+    contentText: `HI  BRO\nᵢₘ  ${itsu.user.name} \n\n\n- Bot group: J3j8XFLPnOR0RI937C8Biu\n\n- Github : https://github.com/KANNANSIR\n\n`,
     footerText: text,
     buttons: buttons,
     headerType: 4,
