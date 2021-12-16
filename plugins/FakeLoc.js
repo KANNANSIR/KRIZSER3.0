@@ -10,7 +10,7 @@ const anu = {
                         },
        message: {
                     locationMessage: {
-                    name: 'Ｓａｙ Ｕｗｕ',
+                    name: 'KRIZSER',
                     jpegThumbnail: thumb3
                           }
                         }
