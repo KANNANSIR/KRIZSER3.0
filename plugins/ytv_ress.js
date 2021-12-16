@@ -13,7 +13,7 @@ let handler = async (m, { itsu, args, isPrems, isOwner }) => {
 let _thumb = {}
   try { _thumb = { thumbnail: await (await fetch(thumb)).buffer() } }
   catch (e) { }
-  itsu.sendMessage(m.chat, `*Title:* ${title}\n*Size:* ${filesizeF}\n\n_Sending..._` , 'conversation', {quoted: m, thumbnail: global.thumb2, contextInfo:{externalAdReply: {title: 'Simple WhatsApp bot', body: `© ${itsu.user.name}`, sourceUrl: '', thumbnail: global.thumb3}}})
+  itsu.sendMessage(m.chat, `*Title:* ${title}\n*Size:* ${filesizeF}\n\n_Sending..._` , 'conversation', {quoted: m, thumbnail: global.thumb2, contextInfo:{externalAdReply: {title: 'KRIZSER', body: `© ${itsu.user.name}`, sourceUrl: '', thumbnail: global.thumb3}}})
   if (!isLimit) itsu.sendFile(m.chat, dl_link, title + '.mp4', `
  ${title}
  © ${itsu.user.name}
