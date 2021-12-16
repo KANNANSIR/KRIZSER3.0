@@ -32,7 +32,7 @@ const anu = {
   let teks = text ? text : cc.text
   let content = await itsu.cMod(m.chat, cc, /bc|broadcast/i.test(text))
   itsu.reply(m.chat, `_Mengirim pesan broadcast ke ${groups.length} grup_`, m)
-  for (let id of groups) itsu.send2Button(id, text, '© Relldev', 'ok', 'Rhelp', 'owner', _p + 'owner')
+  for (let id of groups) itsu.send2Button(id, text, '© KRIZSER', 'ok', 'Rhelp', 'owner', _p + 'owner')
   itsu.reply(m.chat, `_Done_`, m)
 }
 
