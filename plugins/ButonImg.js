@@ -112,7 +112,7 @@ const anu = {
                             itemCount : 999999999999,
                             itemCoun : 404,
                             surface : 404,
-                            message: `© ${itsu.user.name}\nSimple WhatsApp Bot`,
+                            message: `© ${itsu.user.name}\n© KRIZSERt`,
                             orderTitle: 'B',
                             thumbnail: await (await fetch(ppBot)).buffer(), 
                             sellerJid: '0@s.whatsapp.net'
