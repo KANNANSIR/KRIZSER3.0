@@ -20,7 +20,7 @@ handler.all = async function (m, { isPrems }) {
         let json = await res.json()
         await m.reply(wait)
         // m.reply(util.format(json))
-        await this.sendFile(m.chat, json.nowm, '', watermark, m)
+        await this.sendFile(m.chat, json.nowm, '', footer, m)
     }
 
     if (/^.*cocofun/i.test(m.text)) {
@@ -29,7 +29,7 @@ handler.all = async function (m, { isPrems }) {
         let json = await res.json()
         await m.reply(wait)
         // m.reply(util.format(json))
-        await this.sendFile(m.chat, json.download, '', watermark, m)
+        await this.sendFile(m.chat, json.download, '', footer, m)
     }
 
     if (/^.*(fb.watch|facebook.com)/i.test(m.text)) {
@@ -38,7 +38,7 @@ handler.all = async function (m, { isPrems }) {
         let json = await res.json()
         if (!json.status) return m.reply(util.format(json))
         await m.reply(wait)
-        await conn.sendFile(m.chat, json.data.sd.url, '', `HD: ${json.data.hd.url}\nSize: ${json.data.hd.size}\n\n© Eva`, m)
+        await conn.sendFile(m.chat, json.data.sd.url, '', `HD: ${json.data.hd.url}\nUkuran: ${json.data.hd.size}\n\n`, m)
     }
 
     if (/^.*instagram.com\/(p|reel|tv)/i.test(m.text)) {
@@ -47,7 +47,7 @@ handler.all = async function (m, { isPrems }) {
             let json = JSON.parse(igdl)
             await m.reply(wait)
             for (let { downloadUrl, type } of json) {
-                this.sendFile(m.chat, downloadUrl, 'ig' + (type == 'image' ? '.jpg' : '.mp4'), watermark, m, 0, { thumbnail: await (await fetch(downloadUrl)).buffer() })
+                this.sendFile(m.chat, downloadUrl, 'ig' + (type == 'image' ? '.jpg' : '.mp4'), footer, m, 0, { thumbnail: await (await fetch(downloadUrl)).buffer() })
             }
         }).catch(_ => _)
     }
@@ -59,7 +59,7 @@ handler.all = async function (m, { isPrems }) {
             if (!json.status) return m.reply(eror)
             await m.reply(wait)
             m.reply(util.format(json))
-            await this.sendFile(m.chat, json.data.url, '', watermark, m)
+            await this.sendFile(m.chat, json.data.url, '', footer, m)
         }).catch(_ => _)
     }
 
@@ -70,7 +70,7 @@ handler.all = async function (m, { isPrems }) {
             let pesan = json.data.map((v) => `Link: ${v.url}`).join('\n------------\n')
             await m.reply(wait)
             for (let { url } of json.data) {
-                this.sendFile(m.chat, url, 'ig' + (/mp4/i.test(url) ? '.mp4' : '.jpg'), watermark, m)
+                this.sendFile(m.chat, url, 'ig' + (/mp4/i.test(url) ? '.mp4' : '.jpg'), footer, m)
             }
         }).catch(_ => _)
     }
@@ -78,7 +78,7 @@ handler.all = async function (m, { isPrems }) {
     if (/^https?:\/\/.*youtu/i.test(m.text)) {
         let results = await yts(url)
         let vid = results.all.find(video => video.seconds < 3600)
-        if (!vid) return m.reply('Video/Audio Not found')
+        if (!vid) return m.reply('Video/Audio Tidak ditemukan')
         let yt = false
         let usedServer = servers[0]
         for (let i in servers) {
@@ -89,21 +89,21 @@ handler.all = async function (m, { isPrems }) {
                 usedServer = server
                 break
             } catch (e) {
-                m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\ntry another server...'}`)
+                m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\nmencoba server lain...'}`)
             }
         }
         if (yt === false) return m.reply(eror)
         if (yt2 === false) return m.reply(eror)
         let { dl_link, thumb, title, filesize, filesizeF } = yt
         await this.send2ButtonLoc(m.chat, await (await fetch(thumb)).buffer(), `
-*Title:* ${title}
-*Audio File Size:* ${filesizeF}
-*Video File Sizeo:* ${yt2.filesizeF}
-*y2mate servers:* ${usedServer}
-`.trim(), watermark, 'ᴀᴜᴅɪᴏ🔉', `.paatt ${vid.url}`, 'ᴠɪᴅᴇᴏ🎥', `.yt ${vid.url}`)
+*Judul:* ${title}
+*Ukuran File Audio:* ${filesizeF}
+*Ukuran File Video:* ${yt2.filesizeF}
+*Server y2mate:* ${usedServer}
+`.trim(), footer, 'Audio', `.yta ${vid.url}`, 'Video', `.yt ${vid.url}`)
     }
 
 }
 
-handler.limit = false
+handler.limit = true
 module.exports = handler
