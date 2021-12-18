@@ -258,7 +258,7 @@ itsu.relayWAMessage(sendMsg)
 }
 
 
-handler.help = ['menu']
+handler.help = ['kriz']
 handler.tags = ['main']
 handler.command = /^404$/i
 handler.owner = false
