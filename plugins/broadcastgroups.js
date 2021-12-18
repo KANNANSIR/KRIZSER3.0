@@ -32,7 +32,7 @@ const anu = {
   let teks = text ? text : cc.text
   let content = await itsu.cMod(m.chat, cc, /bc|broadcast/i.test(teks) ? teks : teks + '\n' + readMore + '「 All Group Broadcast 」')
   itsu.reply(m.chat, `_Mengirim pesan broadcast ke ${groups.length} grup_`, m)
-  for (let id of groups) itsu.copyNForward(id, content, 'conversation',{quoted: anu, thumbnail: global.thumb2, contextInfo:{externalAdReply: {title: `© ${itsu.user.name} || by Relldev` , body: '>///<', sourceUrl: 'https://chat.whatsapp.com/J3j8XFLPnOR0RI937C8Biu', thumbnail: global.thumb3}}} ,true)
+  for (let id of groups) itsu.copyNForward(id, content, 'conversation',{quoted: anu, thumbnail: global.thumb2, contextInfo:{externalAdReply: {title: `© ${itsu.user.name} || by KRIZSER` , body: '>///<', sourceUrl: 'https://chat.whatsapp.com/J3j8XFLPnOR0RI937C8Biu', thumbnail: global.thumb3}}} ,true)
   itsu.reply(m.chat, `_Done_`, m)
 }
 handler.help = ['broadcastgroup','bcgc'].map(v => v + ' <teks>')
