@@ -74,9 +74,9 @@ const anu = {
 return itsu.sendMessage(m.chat, hisil, 'audioMessage', {mimetype: 'audio/mp4', quoted: m, ptt: true, duration: 4040404})
 }
 
-handler.help = ['menu','help','?']
+handler.help = ['kriz','help','?']
 handler.tags = ['main']
-handler.command = /^(menu|help|\?)$/i
+handler.command = /^(kriz|help|\?)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
