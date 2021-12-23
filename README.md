@@ -16,7 +16,7 @@ Simple WhatsApp Bot
 - [x] Custom Quality YouTube video <details><summary>Screenshot</summary><img src="https://telegra.ph/file/9138a798168e5186278c1.jpg"></details>
 ------------------
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Rlxfly/bot-tzy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/KANNANSIR/KRIZSER3.0)
 # Join kalo eror/ga paham
 * [`Join sini`](https://chat.whatsapp.com/KuXafKWskPeGKruacIp8YT) 
 ## FOR TERMUX/UBUNTU/SSH USER
