@@ -40,7 +40,7 @@ if (!global.DATABASE.data.stats) global.DATABASE.data.stats = {}
 if (!global.DATABASE.data.stats) global.DATABASE.data.msgs = {}
 if (!global.DATABASE.data.sticker) global.DATABASE.data.sticker = {}
 global.itsu = new WAConnection()
-let authFile = `${opts._[0] || 'Rell'}.json`
+let authFile = `${opts._[0] || 'Krishnadas'}.json`
 if (fs.existsSync(authFile)) itsu.loadAuthInfo(authFile)
 if (opts['trace']) itsu.logger.level = 'trace'
 if (opts['debug']) itsu.logger.level = 'debug'
