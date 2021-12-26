@@ -12,8 +12,8 @@ const anu = {
 						"mimetype": "image/jpeg",
 						"jpegThumbnail": thumb
 					},
-					"title": "© ʳᵉˡˡᵈᵉᵛ",
-					"description": "Rlxfly",
+					"title": "© KRIZSER",
+					"description": "©KRIZSER",
 					"currencyCode": "IDR",
 					"priceAmount1000": "404000000",
 					"retailerId": ">//<",
@@ -36,7 +36,7 @@ let gc = itsu.getName(m.chat)
     if (/image|video/.test(mime)) {
       let img = await q.download()
       if (!img) throw 'Foto/Video tidak ditemukan'
-      stiker = await sticker(img, false, 'By: ' + nick || '', '@Rlxfly' || '')
+      stiker = await sticker(img, false, 'By: ' + nick || '', '@KRIZSER' || '')
     } else if (args[0]) stiker = await sticker(false, args[0], global.packname, global.author)
   } finally {
     if (stiker) itsu.sendMessage(m.chat, stiker, MessageType.sticker, {
