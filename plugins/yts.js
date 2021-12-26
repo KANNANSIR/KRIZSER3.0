@@ -17,7 +17,7 @@ ${v.videoCount} video
 `.trim()
     }
   }).filter(v => v).join('\n━━━━━━━━━━━━━━━\n')
-itsu.sendMessage(m.chat, teks, 'conversation', {quoted: m, thumbnail: thumb2, contextInfo:{externalAdReply: {title: 'Simple WhatsApp bot', body: `© ${itsu.user.name}`, sourceUrl: '', thumbnail: thumb}}})
+itsu.sendMessage(m.chat, teks, 'conversation', {quoted: m, thumbnail: thumb2, contextInfo:{externalAdReply: {title: 'KRIZSER', body: `© ${itsu.user.name}`, sourceUrl: '', thumbnail: thumb}}})
 }
 handler.help = ['', 'earch'].map(v => 'yts' + v + ' <pencarian>')
 handler.tags = ['tools']
