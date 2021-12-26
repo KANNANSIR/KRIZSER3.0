@@ -1,8 +1,8 @@
-let handler = async (m, { itsu, text }) => {
-  if (!text) throw 'Tidak ada teks'
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+  if (!text) throw `Example:\n${usedPrefix + command} @919633687665`
   m.reply(text, false, {
     contextInfo: {
-      mentionedJid: itsu.parseMention(text)
+      mentionedJid: conn.parseMention(text)
     }
   })
 }
