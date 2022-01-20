@@ -17,6 +17,9 @@ Simple WhatsApp Bot
 ------------------
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/KANNANSIR/KRIZSER3.0)
+
+[![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://replit.com/@KANNANSIR/KRIZ-SIR-Qr-code?v=1)
+
 # Join kalo eror/ga paham
 * [`Join sini`](https://chat.whatsapp.com/KuXafKWskPeGKruacIp8YT) 
 ## FOR TERMUX/UBUNTU/SSH USER
