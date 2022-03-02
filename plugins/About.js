@@ -10,7 +10,7 @@ const { MessageType} = require("@adiwajshing/baileys")
 const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
 let fs = require ('fs')
 const peli = fs.readFileSync('./kokomi.jpeg')
-itsu.sendMessage(m.chat, '- _*About me*_\n\n- Owner : Rell\n- Age: 16/ IAM STILL SUTDY AT +1\n - Github: KANNANSIR\n\n thx.' , text, {quoted: m, thumbnail: fs.readFileSync('./sarkas.webp'), contextInfo:{externalAdReply: {title: itsu.user.name , body: '>///<',sourceUrl: 'https://chat.whatsapp.com/IwOZg4VGdJq4lTH12aPOzc', thumbnailUrl: pp}}})
+itsu.sendMessage(m.chat, '- _*About me*_\n\n- Owner : 𝚔𝚛𝚒𝚜𝚑𝚗𝚊𝚍𝚊𝚜\n- 𝙰𝚐𝚎: 16/ IAM STILL SUTDY AT +1\n - Github: KANNANSIR\n\n thx.' , text, {quoted: m, thumbnail: fs.readFileSync('./sarkas.webp'), contextInfo:{externalAdReply: {title: itsu.user.name , body: '>///<',sourceUrl: 'https://chat.whatsapp.com/IwOZg4VGdJq4lTH12aPOzc', thumbnailUrl: pp}}})
 }
 
 handler.help = ['about']
