@@ -19,7 +19,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
       usedServer = server
       break
     } catch (e) {
-      m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\nmencoba server lain...'}`)
+      m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\n𝘴𝘦𝘳𝘷𝘦𝘳 𝘦𝘳𝘳 𝘢𝘯𝘶 𝘷𝘳𝘰😶...'}`)
     }
   }
   if (yt === false) throw 'semua server gagal'
