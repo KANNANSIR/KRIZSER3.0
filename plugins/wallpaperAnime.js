@@ -1,17 +1,11 @@
-const { MessageType } = require('@adiwajshing/baileys')
 const fetch = require('node-fetch')
 
-let handler = async (m, { itsu }) => {
-    try {
-        let res = await fetch(global.API('xteam', '/randomimage/wpmobile', {}, 'APIKEY'))
-        let img = await res.buffer()
-        itsu.sendMessage(m.chat, img, MessageType.image, {
-            quoted: m, caption: '*Nih Wallpapernya*'
-        })
-    } catch (e) {
-        console.log(e)
-        throw 'Fitur error Kak'
-    }
+let handler = async (m, { conn }) => {
+    let res = await fetch(global.API('xteam', '/randomimage/wpmobile', {}, 'APIKEY'))
+    if (!res.ok) throw eror
+    let img = await res.buffer()
+    if (!img) throw img
+    conn.sendFile(m.chat, img, '', watermark, m, 0, { thumbnail: await (await fetch(img)).buffer() })
 }
 handler.help = ['wallpaperanime']
 handler.tags = ['internet']
