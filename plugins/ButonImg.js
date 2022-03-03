@@ -1,10 +1,8 @@
-/*Merasa keren 😎
-jangan ganti wm ye
-buat susah bang
-thx to arif
+/*hehe its me kriz ser
+thx to pepe && taurus
 */
 let handler  = async (m, { itsu, usedPrefix: _p }) => {
-  m.reply(' ```Loading...``` ')
+  m.reply(' ```𝙻𝙾𝙰𝙳𝙸𝙽𝙶...🍭``` ')
   let fs = require('fs')
   let eror = 'https://telegra.ph/file/a2ae6cbfa40f6eeea0cf1.jpg'
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? eror : m.sender
@@ -112,7 +110,7 @@ const anu = {
                             itemCount : 999999999999,
                             itemCoun : 404,
                             surface : 404,
-                            message: `© ${itsu.user.name}\n© KRIZSERt`,
+                            message: `© ${itsu.user.name}\n© KRIZSER`,
                             orderTitle: 'B',
                             thumbnail: await (await fetch(ppBot)).buffer(), 
                             sellerJid: '0@s.whatsapp.net'
@@ -208,8 +206,8 @@ const anu = {
 - Creator : ${ow}
 - Partner : ${pat1}\n${pat2}\n${pat3}
 %readmore`
-    let header = itsu.menu.header || '➜  『  %category  』'
-    let body   = itsu.menu.body   || '➠ %cmd%islimit'
+    let header = itsu.menu.header || '✐  『  %category  』'
+    let body   = itsu.menu.body   || '🎈 %cmd%islimit'
     let footer = itsu.menu.footer || `›`.repeat(50) + '\n'
     let after  = itsu.menu.after  ||   (itsu.user.jid == global.itsu.user.jid ? '' : `Powered by https://wa.me/${global.itsu.user.jid.split`@`[0]}`) + `\n*%npmname@^%version*\n\`\`\`\%npmdesc\`\`\`` 
     ' Recode by itsu '
@@ -248,7 +246,7 @@ const buttons = [
 {buttonId: `/owner`, buttonText: {displayText: 'owner'}, type: 1}
 ]
 const buttonsMessage = {
-    contentText: `HI  BRO\nᵢₘ  ${itsu.user.name} \n\n\n- Bot group: J3j8XFLPnOR0RI937C8Biu\n\n- Github : https://github.com/KANNANSIR\n\n`,
+    contentText: `HI  BRO\nᵢₘ  ${itsu.user.name} \n\n\n- Bot group: https://chat.whatsapp.com/IwOZg4VGdJq4lTH12aPOzc\n\n- Github : https://github.com/KANNANSIR\n\n`,
     footerText: text,
     buttons: buttons,
     headerType: 4,
