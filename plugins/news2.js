@@ -1,4 +1,4 @@
-//made by SudoAnirudh
+//made by kriz
 const fetch = require('node-fetch')
 let handler = async (m, { conn, args }) => {
   let res = await fetch(`https://newsapi.org/v2/top-headlines?category=${args}&language=en&country=in&apiKey=ebb795355f3f47a7bd7685a53f7ca454`)
