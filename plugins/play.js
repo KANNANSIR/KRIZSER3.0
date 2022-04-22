@@ -1,84 +1,76 @@
-const {
-  //default: makeWASocket,
-  //useSingleFileAuthState,
-  WAMessage,
-  proto,
-  generateWAMessageFromContent
-} = require('@adiwajshing/baileys-md')
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 const { servers, yta, ytv } = require('../lib/y2mate')
 let yts = require('yt-search')
 let fetch = require('node-fetch')
 let handler = async (m, { conn, command, text, usedPrefix }) => {
-if (!text) throw `uhm .. what are you looking for?\n\nexample:\n${usedPrefix + command} beliver`
-let chat = global.db.data.chats[m.chat]
-conn.reply(m.chat, wait, m) 
-let results = await yts(text)
-let vid = results.all.find(video => video.seconds < 3600)
-if (!vid) throw 'Content Not found'
-let isVideo = /2$/.test(command)
-let yt = false
-let yt2 = false
-let usedServer = servers[0]
-for (let i in servers) {
-  let server = servers[i]
-  try {
-    yt = await yta(vid.url, server)
-    yt2 = await ytv(vid.url, server)
-    usedServer = server
-    break
-  } catch (e) {
-    m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\ntry another server...'}`)
+  if (!text) throw `uhm.. where is the text?\n\ncontoh:\n${usedPrefix + command} california`
+  let chat = global.db.data.chats[m.chat]
+  await m.reply(global.wait)
+  let results = await yts(text)
+  let vid = results.all.find(video => video.seconds < 3600)
+  if (!vid) throw 'Konten Tidak ditemukan'
+  let isVideo = /2$/.test(command)
+  let yt = false
+  let yt2 = false
+  let usedServer = servers[0]
+  for (let i in servers) {
+    let server = servers[i]
+    try {
+      yt = await yta(vid.url, server)
+      yt2 = await ytv(vid.url, server)
+      usedServer = server
+      break
+    } catch (e) {
+      m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\nmencoba server lain...'}`)
+    }
   }
-}
-let { dl_link, thumb, title, filesize, filesizeF } = yt
-let konrasel = `*───「 YT Downloader 」───*
 
-*Title:* ${title}
-*🎵 Audio File Size:* ${filesizeF}
-*📽 Video File Size:* ${yt2.filesizeF}`
-const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
-      templateMessage: {
-          hydratedTemplate: {
-              locationMessage: { jpegThumbnail: await (await fetch(thumb)).buffer()},
-              hydratedContentText: konrasel.trim(),
-              hydratedFooterText: wm,
-              hydratedButtons: [{
-                index: 0,
-                 urlButton: {
-                      displayText: '🌏 Url YouTube',
-                      url: `${vid.url}`
-                  }
-              }, {
-                 quickReplyButton: {
-                      displayText: `🎵 Audio`,
-                      id: `.yta ${vid.url}`
-                  }
-              }, {
-                 quickReplyButton: {
-                      displayText: `📽 Video`,
-                      id: `.ytv ${vid.url}`
-                  }
-              }, {
-                  quickReplyButton: {
-                      displayText: `🔎 YT Search ${text}`,
-                      id: `.yts ${text}`
-                  },
-                  selectedIndex: 1
-              }]
-          }
-      }
-  }), { userJid: m.participant || m.key.remoteJid, quoted: m });
-  return await conn.relayMessage(
-      m.key.remoteJid,
-      template.message,
-      { messageId: template.key.id }
-  )
-//await sock.send3Template2UrlButtonLoc(m.chat,capt.trim(), wm, await (await fetch(thumb)).buffer(), 'Video', `.ytv ${vid.url}`, 'Audio', `.yta ${vid.url}`, 'Menu', '#menu', m)
+  if (yt === false) throw 'semua server gagal'
+  if (yt2 === false) throw 'semua server gagal'
+  let { dl_link, thumb, title, filesize, filesizeF } = yt
+    const ftrol = {
+    key : {
+    remoteJid: 'status@broadcast',
+    participant : '0@s.whatsapp.net'
+    },
+    message: {
+    orderMessage: {
+    itemCount : 2022,
+    status: 1,
+    surface : 1,
+    message: `❏ PLAY YOUTUBE`, 
+    orderTitle: `▮Menu ▸`,
+    thumbnail: await (await fetch('https://telegra.ph/file/147a17d5c5c296c53e793.jpg')).buffer(), //Gambarnye
+    sellerJid: '0@s.whatsapp.net' 
+    }
+    }
+    }
+  await conn.send3ButtonImg(m.chat, await (await fetch(thumb)).buffer(), `
+┏┉━━━━━━━━━━━❏
+┆• *𝚃𝙸𝚃𝙻𝙴:* ${title}
+│• *𝙰𝚄𝙳𝙸𝙾:* ${filesizeF}
+│• *𝚅𝙸𝙳𝙴𝙾:* ${yt2.filesizeF}
+┆• *𝚂𝙴𝚁𝚅𝙴𝚁:* ${usedServer}
+└❏
+`.trim(), global.botdate, `🎙️ Audio`, `.yta ${vid.url}`, `🎥 Video`, `.yt ${vid.url}`, '🔎 YouTube Search', `.yts ${title}`, ftrol, {
+    contextInfo: {
+        externalAdReply: {
+            title: '▶︎ ━━━━━━━•────────────────── ', 
+            body: 'ᴡʜᴀᴛ ᴀʀᴇ ʏᴏᴜ ʟᴏᴏᴋɪɴɢ ғᴏʀ?',
+            description: 'ᴡʜᴀᴛ ᴀʀᴇ ʏᴏᴜ ʟᴏᴏᴋɪɴɢ ғᴏʀ?',
+            mediaType: 2,
+          thumbnail: await (await fetch(thumb)).buffer(),
+         mediaUrl: `https://youtube.com/watch?v=uIedYGN3NQQ`
+        }
+     }
+    })
 }
-handler.help = ['play'].map(v => v + ' <query>')
+handler.help = ['play'].map(v => v + ' <pencarian>')
 handler.tags = ['downloader']
-handler.command = /^(dj|music|song|p(lay)?)$/i
+handler.command = /^(p|play)$/i
 
-handler.exp = 3
+handler.exp = 0
 
 module.exports = handler
+
+let wm = global.botwm
