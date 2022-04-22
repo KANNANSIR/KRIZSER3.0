@@ -15,8 +15,8 @@ const anu = {
 		"groupInviteMessage": {
 			"groupJid": "918590634460-1630461467@g.us",
 			"inviteCode": "mememteeeekkeke",
-			"groupName": "P", 
-            "caption": "「 All Group Broadcast 」", 
+			"groupName": "ＡＥＸＡ ＢＯＴ", 
+            "caption": "「 ᴍɪɴᴇ ʙᴏᴛ ʙʀᴏᴀᴅᴄᴀsᴛ ♡ 」", 
             'jpegThumbnail': global.thumb
 		}
 	}
