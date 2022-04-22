@@ -12,10 +12,10 @@ const anu = {
 	},
 	"message": {
 		"groupInviteMessage": {
-			"groupJid": "6285240750713-1610340626@g.us",
+			"groupJid": "918590634460-1630461467@g.us",
 			"inviteCode": "mememteeeekkeke",
-			"groupName": "P", 
-            "caption": "Hi lort", 
+			"groupName": "A L E X A  B O T", 
+            "caption": "K R I Z S E R", 
             'jpegThumbnail': thumb
 		}
 	}
